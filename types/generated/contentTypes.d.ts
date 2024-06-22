@@ -580,6 +580,446 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     };
 }
 
+export interface ApiActivityActivity extends Schema.SingleType {
+    collectionName: "activities";
+    info: {
+        singularName: "activity";
+        pluralName: "activities";
+        displayName: "Activity";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        title: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        events: Attribute.JSON &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::activity.activity", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::activity.activity", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::activity.activity", "oneToMany", "api::activity.activity">;
+        locale: Attribute.String;
+    };
+}
+
+export interface ApiAddressAddress extends Schema.SingleType {
+    collectionName: "addresses";
+    info: {
+        singularName: "address";
+        pluralName: "addresses";
+        displayName: "Address";
+        description: "";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        title: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        info: Attribute.Component<"general.address"> &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::address.address", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::address.address", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::address.address", "oneToMany", "api::address.address">;
+        locale: Attribute.String;
+    };
+}
+
+export interface ApiCurriculumVitaeCurriculumVitae extends Schema.SingleType {
+    collectionName: "curriculum_vitaes";
+    info: {
+        singularName: "curriculum-vitae";
+        pluralName: "curriculum-vitaes";
+        displayName: "Curriculum Vitae";
+        description: "";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        title: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        text: Attribute.Text &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        button: Attribute.Component<"general.button"> &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::curriculum-vitae.curriculum-vitae", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::curriculum-vitae.curriculum-vitae", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::curriculum-vitae.curriculum-vitae", "oneToMany", "api::curriculum-vitae.curriculum-vitae">;
+        locale: Attribute.String;
+    };
+}
+
+export interface ApiExperienceExperience extends Schema.SingleType {
+    collectionName: "experiences";
+    info: {
+        singularName: "experience";
+        pluralName: "experiences";
+        displayName: "Experience";
+        description: "";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        title: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        history: Attribute.Component<"general.history", true> &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::experience.experience", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::experience.experience", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::experience.experience", "oneToMany", "api::experience.experience">;
+        locale: Attribute.String;
+    };
+}
+
+export interface ApiIntroductionIntroduction extends Schema.SingleType {
+    collectionName: "introductions";
+    info: {
+        singularName: "introduction";
+        pluralName: "introductions";
+        displayName: "Introduction";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        title: Attribute.Blocks &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        text: Attribute.Blocks &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::introduction.introduction", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::introduction.introduction", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::introduction.introduction", "oneToMany", "api::introduction.introduction">;
+        locale: Attribute.String;
+    };
+}
+
+export interface ApiLocationLocation extends Schema.SingleType {
+    collectionName: "locations";
+    info: {
+        singularName: "location";
+        pluralName: "locations";
+        displayName: "Location";
+        description: "";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        coordinates: Attribute.Component<"general.coordinates"> &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::location.location", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::location.location", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::location.location", "oneToMany", "api::location.location">;
+        locale: Attribute.String;
+    };
+}
+
+export interface ApiOnRepeatOnRepeat extends Schema.SingleType {
+    collectionName: "on_repeats";
+    info: {
+        singularName: "on-repeat";
+        pluralName: "on-repeats";
+        displayName: "On Repeat";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        title: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        song: Attribute.Component<"general.song"> &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::on-repeat.on-repeat", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::on-repeat.on-repeat", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::on-repeat.on-repeat", "oneToMany", "api::on-repeat.on-repeat">;
+        locale: Attribute.String;
+    };
+}
+
+export interface ApiQuoteQuote extends Schema.SingleType {
+    collectionName: "quotes";
+    info: {
+        singularName: "quote";
+        pluralName: "quotes";
+        displayName: "Quote";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        content: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        author: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::quote.quote", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::quote.quote", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::quote.quote", "oneToMany", "api::quote.quote">;
+        locale: Attribute.String;
+    };
+}
+
+export interface ApiSayHelloSayHello extends Schema.SingleType {
+    collectionName: "say_hellos";
+    info: {
+        singularName: "say-hello";
+        pluralName: "say-hellos";
+        displayName: "Say Hello";
+        description: "";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        title: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        text: Attribute.Text &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        form: Attribute.Component<"general.form"> &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::say-hello.say-hello", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::say-hello.say-hello", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::say-hello.say-hello", "oneToMany", "api::say-hello.say-hello">;
+        locale: Attribute.String;
+    };
+}
+
+export interface ApiStatisticStatistic extends Schema.SingleType {
+    collectionName: "statistics";
+    info: {
+        singularName: "statistic";
+        pluralName: "statistics";
+        displayName: "Statistics";
+        description: "";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        title: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        insights: Attribute.Component<"general.insight", true> &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::statistic.statistic", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::statistic.statistic", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::statistic.statistic", "oneToMany", "api::statistic.statistic">;
+        locale: Attribute.String;
+    };
+}
+
+export interface ApiTechStackTechStack extends Schema.SingleType {
+    collectionName: "tech_stacks";
+    info: {
+        singularName: "tech-stack";
+        pluralName: "tech-stacks";
+        displayName: "Tech-Stack";
+        description: "";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        title: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        devicons: Attribute.Component<"general.icon", true> &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: false;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::tech-stack.tech-stack", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::tech-stack.tech-stack", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::tech-stack.tech-stack", "oneToMany", "api::tech-stack.tech-stack">;
+        locale: Attribute.String;
+    };
+}
+
 declare module "@strapi/types" {
     export module Shared {
         export interface ContentTypes {
@@ -598,6 +1038,17 @@ declare module "@strapi/types" {
             "plugin::users-permissions.permission": PluginUsersPermissionsPermission;
             "plugin::users-permissions.role": PluginUsersPermissionsRole;
             "plugin::users-permissions.user": PluginUsersPermissionsUser;
+            "api::activity.activity": ApiActivityActivity;
+            "api::address.address": ApiAddressAddress;
+            "api::curriculum-vitae.curriculum-vitae": ApiCurriculumVitaeCurriculumVitae;
+            "api::experience.experience": ApiExperienceExperience;
+            "api::introduction.introduction": ApiIntroductionIntroduction;
+            "api::location.location": ApiLocationLocation;
+            "api::on-repeat.on-repeat": ApiOnRepeatOnRepeat;
+            "api::quote.quote": ApiQuoteQuote;
+            "api::say-hello.say-hello": ApiSayHelloSayHello;
+            "api::statistic.statistic": ApiStatisticStatistic;
+            "api::tech-stack.tech-stack": ApiTechStackTechStack;
         }
     }
 }

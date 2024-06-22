@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "curriculum_vitaes",
+  "info": {
+    "singularName": "curriculum-vitae",
+    "pluralName": "curriculum-vitaes",
+    "displayName": "Curriculum Vitae",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "required": true
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "general.button",
+      "required": true
+    }
+  }
+}

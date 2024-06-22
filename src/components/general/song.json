@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_general_songs",
+  "info": {
+    "displayName": "Song",
+    "icon": "music",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "artist": {
+      "type": "string",
+      "required": true
+    },
+    "record": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "audios"
+      ]
+    }
+  }
+}

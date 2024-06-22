@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_general_forms",
+  "info": {
+    "displayName": "Form",
+    "icon": "file",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "inputs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.input",
+      "required": true
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.button",
+      "required": true
+    },
+    "notification": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.notification",
+      "required": true
+    }
+  }
+}

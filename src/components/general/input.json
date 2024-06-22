@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_general_inputs",
+  "info": {
+    "displayName": "Input",
+    "icon": "information",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "field": {
+      "type": "string",
+      "required": true
+    },
+    "required": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "pattern": {
+      "type": "string",
+      "required": true
+    },
+    "placeholder": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "textarea"
+      ],
+      "required": true,
+      "default": "text"
+    },
+    "width": {
+      "type": "enumeration",
+      "enum": [
+        "small",
+        "large"
+      ],
+      "default": "large",
+      "required": true
+    }
+  }
+}

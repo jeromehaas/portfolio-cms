@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "on_repeats",
+  "info": {
+    "singularName": "on-repeat",
+    "pluralName": "on-repeats",
+    "displayName": "On Repeat"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "song": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "general.song"
+    }
+  }
+}

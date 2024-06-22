@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_general_notifications",
+  "info": {
+    "displayName": "Notification",
+    "icon": "discuss"
+  },
+  "options": {},
+  "attributes": {
+    "success": {
+      "type": "string",
+      "required": true
+    },
+    "error": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

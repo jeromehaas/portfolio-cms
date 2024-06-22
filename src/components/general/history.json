@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_general_histories",
+  "info": {
+    "displayName": "History",
+    "icon": "clock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "company": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "duration": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "logo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.icon",
+      "required": true
+    },
+    "reference": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.button"
+    }
+  }
+}
