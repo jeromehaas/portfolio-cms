@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_general_links",
+  "info": {
+    "displayName": "Links",
+    "icon": "paperPlane"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "github",
+        "website"
+      ],
+      "required": true,
+      "default": "github"
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

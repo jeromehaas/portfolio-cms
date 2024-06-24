@@ -745,6 +745,45 @@ export interface ApiExperienceExperience extends Schema.SingleType {
     };
 }
 
+export interface ApiFeaturedProjectFeaturedProject extends Schema.SingleType {
+    collectionName: "featured_projects";
+    info: {
+        singularName: "featured-project";
+        pluralName: "featured-projects";
+        displayName: "Featured Projects";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        title: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        projects: Attribute.Component<"general.project", true> &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::featured-project.featured-project", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::featured-project.featured-project", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::featured-project.featured-project", "oneToMany", "api::featured-project.featured-project">;
+        locale: Attribute.String;
+    };
+}
+
 export interface ApiIntroductionIntroduction extends Schema.SingleType {
     collectionName: "introductions";
     info: {
@@ -1042,6 +1081,7 @@ declare module "@strapi/types" {
             "api::address.address": ApiAddressAddress;
             "api::curriculum-vitae.curriculum-vitae": ApiCurriculumVitaeCurriculumVitae;
             "api::experience.experience": ApiExperienceExperience;
+            "api::featured-project.featured-project": ApiFeaturedProjectFeaturedProject;
             "api::introduction.introduction": ApiIntroductionIntroduction;
             "api::location.location": ApiLocationLocation;
             "api::on-repeat.on-repeat": ApiOnRepeatOnRepeat;

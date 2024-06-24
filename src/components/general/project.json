@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_general_projects",
+  "info": {
+    "displayName": "project",
+    "icon": "monitor"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "year": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.links",
+      "required": false
+    },
+    "devicons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.icon",
+      "required": true
+    }
+  }
+}

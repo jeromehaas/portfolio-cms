@@ -112,6 +112,18 @@ export interface GeneralInsight extends Schema.Component {
     };
 }
 
+export interface GeneralLinks extends Schema.Component {
+    collectionName: "components_general_links";
+    info: {
+        displayName: "Links";
+        icon: "paperPlane";
+    };
+    attributes: {
+        type: Attribute.Enumeration<["github", "website"]> & Attribute.Required & Attribute.DefaultTo<"github">;
+        url: Attribute.String & Attribute.Required;
+    };
+}
+
 export interface GeneralNotification extends Schema.Component {
     collectionName: "components_general_notifications";
     info: {
@@ -121,6 +133,22 @@ export interface GeneralNotification extends Schema.Component {
     attributes: {
         success: Attribute.String & Attribute.Required;
         error: Attribute.String & Attribute.Required;
+    };
+}
+
+export interface GeneralProject extends Schema.Component {
+    collectionName: "components_general_projects";
+    info: {
+        displayName: "project";
+        icon: "monitor";
+    };
+    attributes: {
+        title: Attribute.String & Attribute.Required;
+        year: Attribute.String & Attribute.Required;
+        type: Attribute.String & Attribute.Required;
+        description: Attribute.Blocks & Attribute.Required;
+        links: Attribute.Component<"general.links", true>;
+        devicons: Attribute.Component<"general.icon", true> & Attribute.Required;
     };
 }
 
@@ -149,7 +177,9 @@ declare module "@strapi/types" {
             "general.icon": GeneralIcon;
             "general.input": GeneralInput;
             "general.insight": GeneralInsight;
+            "general.links": GeneralLinks;
             "general.notification": GeneralNotification;
+            "general.project": GeneralProject;
             "general.song": GeneralSong;
         }
     }

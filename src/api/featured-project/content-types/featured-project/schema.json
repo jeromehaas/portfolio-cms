@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "featured_projects",
+  "info": {
+    "singularName": "featured-project",
+    "pluralName": "featured-projects",
+    "displayName": "Featured Projects"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "projects": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "general.project",
+      "required": true
+    }
+  }
+}
