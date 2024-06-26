@@ -1040,6 +1040,29 @@ export interface ApiLocationLocation extends Schema.SingleType {
     };
 }
 
+export interface ApiMessageMessage extends Schema.CollectionType {
+    collectionName: "messages";
+    info: {
+        singularName: "message";
+        pluralName: "messages";
+        displayName: "Messages";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    attributes: {
+        firstname: Attribute.String & Attribute.Required;
+        lastname: Attribute.String & Attribute.Required;
+        email: Attribute.String & Attribute.Required;
+        phone: Attribute.String;
+        message: Attribute.Text & Attribute.Required;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::message.message", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::message.message", "oneToOne", "admin::user"> & Attribute.Private;
+    };
+}
+
 export interface ApiMetadataMetadata extends Schema.SingleType {
     collectionName: "metadatas";
     info: {
@@ -1317,6 +1340,7 @@ declare module "@strapi/types" {
             "api::imprint.imprint": ApiImprintImprint;
             "api::introduction.introduction": ApiIntroductionIntroduction;
             "api::location.location": ApiLocationLocation;
+            "api::message.message": ApiMessageMessage;
             "api::metadata.metadata": ApiMetadataMetadata;
             "api::on-repeat.on-repeat": ApiOnRepeatOnRepeat;
             "api::quote.quote": ApiQuoteQuote;
