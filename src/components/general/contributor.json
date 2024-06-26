@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_general_contributors",
+  "info": {
+    "displayName": "Contributor",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "expertise": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "street": {
+      "type": "string",
+      "required": true
+    },
+    "plz": {
+      "type": "string",
+      "required": true
+    },
+    "town": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

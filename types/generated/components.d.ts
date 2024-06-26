@@ -15,6 +15,18 @@ export interface GeneralAddress extends Schema.Component {
     };
 }
 
+export interface GeneralArticle extends Schema.Component {
+    collectionName: "components_general_articles";
+    info: {
+        displayName: "Article";
+        icon: "book";
+    };
+    attributes: {
+        title: Attribute.String & Attribute.Required;
+        content: Attribute.Blocks & Attribute.Required;
+    };
+}
+
 export interface GeneralButton extends Schema.Component {
     collectionName: "components_general_buttons";
     info: {
@@ -24,6 +36,24 @@ export interface GeneralButton extends Schema.Component {
     attributes: {
         label: Attribute.String & Attribute.Required;
         href: Attribute.String & Attribute.Required;
+    };
+}
+
+export interface GeneralContributor extends Schema.Component {
+    collectionName: "components_general_contributors";
+    info: {
+        displayName: "Contributor";
+        icon: "user";
+    };
+    attributes: {
+        expertise: Attribute.String & Attribute.Required;
+        name: Attribute.String & Attribute.Required;
+        street: Attribute.String & Attribute.Required;
+        plz: Attribute.String & Attribute.Required;
+        town: Attribute.String & Attribute.Required;
+        country: Attribute.String & Attribute.Required;
+        email: Attribute.String & Attribute.Required;
+        phone: Attribute.String & Attribute.Required;
     };
 }
 
@@ -170,7 +200,9 @@ declare module "@strapi/types" {
     export module Shared {
         export interface Components {
             "general.address": GeneralAddress;
+            "general.article": GeneralArticle;
             "general.button": GeneralButton;
+            "general.contributor": GeneralContributor;
             "general.coordinates": GeneralCoordinates;
             "general.form": GeneralForm;
             "general.history": GeneralHistory;

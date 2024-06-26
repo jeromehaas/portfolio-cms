@@ -658,6 +658,45 @@ export interface ApiAddressAddress extends Schema.SingleType {
     };
 }
 
+export interface ApiBoringLinkBoringLink extends Schema.SingleType {
+    collectionName: "boring_links";
+    info: {
+        singularName: "boring-link";
+        pluralName: "boring-links";
+        displayName: "Boring Links";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        title: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        links: Attribute.Component<"general.button", true> &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::boring-link.boring-link", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::boring-link.boring-link", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::boring-link.boring-link", "oneToMany", "api::boring-link.boring-link">;
+        locale: Attribute.String;
+    };
+}
+
 export interface ApiCurriculumVitaeCurriculumVitae extends Schema.SingleType {
     collectionName: "curriculum_vitaes";
     info: {
@@ -701,6 +740,107 @@ export interface ApiCurriculumVitaeCurriculumVitae extends Schema.SingleType {
         createdBy: Attribute.Relation<"api::curriculum-vitae.curriculum-vitae", "oneToOne", "admin::user"> & Attribute.Private;
         updatedBy: Attribute.Relation<"api::curriculum-vitae.curriculum-vitae", "oneToOne", "admin::user"> & Attribute.Private;
         localizations: Attribute.Relation<"api::curriculum-vitae.curriculum-vitae", "oneToMany", "api::curriculum-vitae.curriculum-vitae">;
+        locale: Attribute.String;
+    };
+}
+
+export interface ApiDataPrivacyDataPrivacy extends Schema.SingleType {
+    collectionName: "data_privacies";
+    info: {
+        singularName: "data-privacy";
+        pluralName: "data-privacies";
+        displayName: "Data Privacy";
+        description: "";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        title: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        articles: Attribute.Component<"general.article", true> &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        button: Attribute.Component<"general.button"> &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::data-privacy.data-privacy", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::data-privacy.data-privacy", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::data-privacy.data-privacy", "oneToMany", "api::data-privacy.data-privacy">;
+        locale: Attribute.String;
+    };
+}
+
+export interface ApiErrorError extends Schema.SingleType {
+    collectionName: "errors";
+    info: {
+        singularName: "error";
+        pluralName: "errors";
+        displayName: "Error";
+        description: "";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        peaker: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        title: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        text: Attribute.Text &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        button: Attribute.Component<"general.button"> &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::error.error", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::error.error", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::error.error", "oneToMany", "api::error.error">;
         locale: Attribute.String;
     };
 }
@@ -784,6 +924,50 @@ export interface ApiFeaturedProjectFeaturedProject extends Schema.SingleType {
     };
 }
 
+export interface ApiImprintImprint extends Schema.SingleType {
+    collectionName: "imprints";
+    info: {
+        singularName: "imprint";
+        pluralName: "imprints";
+        displayName: "Imprint";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        title: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        contributors: Attribute.Component<"general.contributor", true> &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        button: Attribute.Component<"general.button"> &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::imprint.imprint", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::imprint.imprint", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::imprint.imprint", "oneToMany", "api::imprint.imprint">;
+        locale: Attribute.String;
+    };
+}
+
 export interface ApiIntroductionIntroduction extends Schema.SingleType {
     collectionName: "introductions";
     info: {
@@ -852,6 +1036,51 @@ export interface ApiLocationLocation extends Schema.SingleType {
         createdBy: Attribute.Relation<"api::location.location", "oneToOne", "admin::user"> & Attribute.Private;
         updatedBy: Attribute.Relation<"api::location.location", "oneToOne", "admin::user"> & Attribute.Private;
         localizations: Attribute.Relation<"api::location.location", "oneToMany", "api::location.location">;
+        locale: Attribute.String;
+    };
+}
+
+export interface ApiMetadataMetadata extends Schema.SingleType {
+    collectionName: "metadatas";
+    info: {
+        singularName: "metadata";
+        pluralName: "metadatas";
+        displayName: "Metadata";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    pluginOptions: {
+        i18n: {
+            localized: true;
+        };
+    };
+    attributes: {
+        title: Attribute.String &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        description: Attribute.Text &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        image: Attribute.Media<"images"> &
+            Attribute.Required &
+            Attribute.SetPluginOptions<{
+                i18n: {
+                    localized: true;
+                };
+            }>;
+        createdAt: Attribute.DateTime;
+        updatedAt: Attribute.DateTime;
+        createdBy: Attribute.Relation<"api::metadata.metadata", "oneToOne", "admin::user"> & Attribute.Private;
+        updatedBy: Attribute.Relation<"api::metadata.metadata", "oneToOne", "admin::user"> & Attribute.Private;
+        localizations: Attribute.Relation<"api::metadata.metadata", "oneToMany", "api::metadata.metadata">;
         locale: Attribute.String;
     };
 }
@@ -1079,11 +1308,16 @@ declare module "@strapi/types" {
             "plugin::users-permissions.user": PluginUsersPermissionsUser;
             "api::activity.activity": ApiActivityActivity;
             "api::address.address": ApiAddressAddress;
+            "api::boring-link.boring-link": ApiBoringLinkBoringLink;
             "api::curriculum-vitae.curriculum-vitae": ApiCurriculumVitaeCurriculumVitae;
+            "api::data-privacy.data-privacy": ApiDataPrivacyDataPrivacy;
+            "api::error.error": ApiErrorError;
             "api::experience.experience": ApiExperienceExperience;
             "api::featured-project.featured-project": ApiFeaturedProjectFeaturedProject;
+            "api::imprint.imprint": ApiImprintImprint;
             "api::introduction.introduction": ApiIntroductionIntroduction;
             "api::location.location": ApiLocationLocation;
+            "api::metadata.metadata": ApiMetadataMetadata;
             "api::on-repeat.on-repeat": ApiOnRepeatOnRepeat;
             "api::quote.quote": ApiQuoteQuote;
             "api::say-hello.say-hello": ApiSayHelloSayHello;
