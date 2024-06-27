@@ -1,9 +1,7 @@
 'use strict';
 
-/**
- * boring-link service
- */
-
+// IMPORTS
 const { createCoreService } = require('@strapi/strapi').factories;
 
+// EXPORTS
 module.exports = createCoreService('api::boring-link.boring-link');

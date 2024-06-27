@@ -1,9 +1,7 @@
 'use strict';
 
-/**
- * location controller
- */
-
+// IMPORTS
 const { createCoreController } = require('@strapi/strapi').factories;
 
+// EXPORTS
 module.exports = createCoreController('api::location.location');

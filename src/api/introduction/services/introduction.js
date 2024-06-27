@@ -1,9 +1,7 @@
 'use strict';
 
-/**
- * introduction service
- */
-
+// IMPORTS
 const { createCoreService } = require('@strapi/strapi').factories;
 
+// EXPORTS
 module.exports = createCoreService('api::introduction.introduction');

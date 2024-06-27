@@ -1,9 +1,7 @@
 'use strict';
 
-/**
- * say-hello router
- */
-
+// IMPORTS
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
+// EXPORTS
 module.exports = createCoreRouter('api::say-hello.say-hello');

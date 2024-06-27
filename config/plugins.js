@@ -1,3 +1,4 @@
+// EXPORTS
 module.exports = ({env}) => ({
 	upload: {
 		config: {

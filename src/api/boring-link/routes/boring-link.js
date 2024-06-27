@@ -1,9 +1,7 @@
 'use strict';
 
-/**
- * boring-link router
- */
-
+// IMPORTS
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
+// EXPORTS
 module.exports = createCoreRouter('api::boring-link.boring-link');

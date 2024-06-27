@@ -1,9 +1,7 @@
 'use strict';
 
-/**
- * data-privacy service
- */
-
+// IMPORTS
 const { createCoreService } = require('@strapi/strapi').factories;
 
+// EXPORTS
 module.exports = createCoreService('api::data-privacy.data-privacy');

@@ -1,9 +1,7 @@
 'use strict';
 
-/**
- * featured-project service
- */
-
+// IMPORTS
 const { createCoreService } = require('@strapi/strapi').factories;
 
+// EXPORTS
 module.exports = createCoreService('api::featured-project.featured-project');

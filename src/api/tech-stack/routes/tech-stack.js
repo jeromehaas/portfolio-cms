@@ -1,9 +1,7 @@
 'use strict';
 
-/**
- * tech-stack router
- */
-
+// IMPORTS
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
+// EXPORTS
 module.exports = createCoreRouter('api::tech-stack.tech-stack');

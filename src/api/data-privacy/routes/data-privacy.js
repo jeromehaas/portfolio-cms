@@ -1,9 +1,7 @@
 'use strict';
 
-/**
- * data-privacy router
- */
-
+// IMPORTS
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
+// EXPORTS
 module.exports = createCoreRouter('api::data-privacy.data-privacy');

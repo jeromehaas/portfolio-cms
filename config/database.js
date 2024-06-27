@@ -1,5 +1,7 @@
+// IMPORTS
 const path = require('path');
 
+// EXPORTS
 module.exports = ({env}) => {
 	const client = env('DATABASE_CLIENT', 'postgres');
 	
