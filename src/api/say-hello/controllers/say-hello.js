@@ -1,9 +1,7 @@
 'use strict';
 
-/**
- * say-hello controller
- */
-
+// IMPORTS
 const { createCoreController } = require('@strapi/strapi').factories;
 
+// EXPORTS
 module.exports = createCoreController('api::say-hello.say-hello');

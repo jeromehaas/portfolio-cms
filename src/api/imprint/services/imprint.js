@@ -1,9 +1,7 @@
 'use strict';
 
-/**
- * imprint service
- */
-
+// IMPORTS
 const { createCoreService } = require('@strapi/strapi').factories;
 
+// EXPORTS
 module.exports = createCoreService('api::imprint.imprint');

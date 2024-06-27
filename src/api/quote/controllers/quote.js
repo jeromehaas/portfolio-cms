@@ -1,9 +1,7 @@
 'use strict';
 
-/**
- * quote controller
- */
-
+// IMPORTS
 const { createCoreController } = require('@strapi/strapi').factories;
 
+// EXPORTS
 module.exports = createCoreController('api::quote.quote');

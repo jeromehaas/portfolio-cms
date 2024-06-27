@@ -1,9 +1,7 @@
 'use strict';
 
-/**
- * statistic service
- */
-
+// IMPORTS
 const { createCoreService } = require('@strapi/strapi').factories;
 
+// EXPORTS
 module.exports = createCoreService('api::statistic.statistic');
